@@ -8,9 +8,11 @@
     "webpack-dev-server": "^5.2.4"
   },
   "scripts": {
-    "build" : "webpack",
-    "dev" : "webpack serve",
+    "build": "webpack",
+    "dev": "webpack serve",
     "deploy": "git subtree push --prefix dist origin gh-pages"
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0"
   }
-
 }
