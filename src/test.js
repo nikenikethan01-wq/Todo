@@ -138,3 +138,26 @@ const render = function(){
 }
 
 render()
+
+
+
+
+
+
+
+
+
+// function genericRender(template,uuidData,priority-true,title, description, dueDate, appendto ){
+//     // cont container
+//     if(template)
+//         clone
+//     if(uuidData){
+//         add uuid
+//     }
+//     if(priority level)
+//         ///
+//     if(description)
+//     if(duedate)
+//     if(appendto)
+
+// }
