@@ -21,9 +21,13 @@ export const projectRemove = function(target) {
                 }
             }
         })
+        // Local Storage Update
+        localStorage.setItem('dataArray', JSON.stringify(dataArray)) 
         // remove from projectsArray
         const removeIndex = projectsArray.indexOf(target)
         projectsArray.splice(removeIndex, 1)
+        // Local Storage Update
+        localStorage.setItem('projectsArray', JSON.stringify(projectsArray)) 
         // update aside UI
         const removeli = [... document.querySelectorAll('li')]
         removeli.forEach(li => {

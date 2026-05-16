@@ -6,6 +6,8 @@ export const todoDelete = {
     delete: function(uuidData) {
         const arrayIndex = dataArray.findIndex(item => item.uuid === uuidData)
         dataArray.splice(arrayIndex,1)
+        //local storage update
+        localStorage.setItem('dataArray', JSON.stringify(dataArray)) 
         //pubsub publish
         console.log(`MODIFY: just todoDeleted Event - ${uuidData}`)
         pubsub.publish('todoDeleted', uuidData)

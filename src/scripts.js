@@ -26,7 +26,7 @@ document.body.addEventListener('click', (ev) => {
         todoCreate.create(
             document.querySelector('form input[type=text]').value,
             document.querySelector('form textarea').value,
-            new Date(document.getElementById('due').value),
+            document.getElementById('due').value,
             document.querySelector('form select').value,
             document.getElementById('main-title').textContent
         )
@@ -97,6 +97,9 @@ document.body.addEventListener('click', (ev) => {
 })
     
 const initialRender = (function(){
+    // Get Local Storage Data
+    const localDataArray = JSON.parse(localStorage.getItem("dataArray"))
+    const localProjectsArray = JSON.parse(localStorage.getItem('projectsArray'))
     const todoContainer = document.querySelector('.todo-container');
     const projectsUL = document.querySelector('aside ul')
     const todoFragment = document.createDocumentFragment()
@@ -116,11 +119,5 @@ const initialRender = (function(){
         projectFragment.append(li)
     })
     projectsUL.append(projectFragment)
-
     subscriptions()
 })()
-
-
-
-
-

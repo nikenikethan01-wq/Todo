@@ -4,12 +4,15 @@ import { pubsub } from "./pubsub.js"
 export const projectCreate = {
     create: function(){
         const projectName = document.querySelector('.project-modal input').value
-            if(!projectsArray.includes(projectName)){
-                projectsArray.push(projectName)
-                console.log(`PROJECTS: just projectCreated added`)
-                pubsub.publish('projectCreated', projectName)
-            }
-            return
+        if(!projectsArray.includes(projectName)){
+            projectsArray.push(projectName)
+            // Local Storage Update
+            localStorage.setItem('projectsArray', JSON.stringify(projectsArray)) 
+            //PUB SUB
+            console.log(`PROJECTS: just projectCreated added`)
+            pubsub.publish('projectCreated', projectName)
+        }
+        return
     },
 
     render: function(projectName){

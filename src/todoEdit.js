@@ -35,7 +35,9 @@ export const todoEdit = {
         dataArray[arrayIndex].description = description.value
         dataArray[arrayIndex].priority = priority.value
         dataArray[arrayIndex].dueDate = new Date(dueDate.value)
-        console.log(dataArray[arrayIndex])
+        // Local Storage update
+        localStorage.setItem('dataArray', JSON.stringify(dataArray)) 
+        //PUB SUB
         console.log(`MODIFY: Just todoEdited Event`)
         pubsub.publish('todoEdited', dataArray[arrayIndex])
         console.log(dataArray[arrayIndex], "commitEdit")

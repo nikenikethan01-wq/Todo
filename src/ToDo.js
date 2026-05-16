@@ -1,13 +1,13 @@
 export class ToDo {
 
-    constructor(title, description, dueDate, priority, project){
+    constructor(title, description, dueDate, priority, project, uuid = crypto.randomUUID() ,ischecked = false){
         this.title = title
         this.description = description
         this.dueDate = dueDate
         this.priority = priority
         this.project = project
-        this.uuid= crypto.randomUUID()
-        this.ischecked = false
+        this.uuid= uuid
+        this.ischecked = ischecked
     }
     set title(value){
         this._title = value
@@ -25,10 +25,10 @@ export class ToDo {
         const selectDate = new Date(value)
         const today = new Date()
         today.setHours(0, 0, 0, 0)
-        // if(selectDate < today){
-        //     console.warn("Note: This date is in the past.")
-        // }
-        this._dueDate = value
+        if(selectDate < today){
+            console.warn("Note: This date is in the past.")
+        }
+        this._dueDate = selectDate
     }
     get dueDate(){
         return this._dueDate

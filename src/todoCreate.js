@@ -13,6 +13,8 @@ export const todoCreate = {
             project
        )
        dataArray.push(itemObj)
+       // local storage update
+       localStorage.setItem('dataArray', JSON.stringify(dataArray)) 
        ///PUBSUB: published item added
        console.log(`CREATE: just todoCreated Event - ${itemObj}`)
        console.log(itemObj)
