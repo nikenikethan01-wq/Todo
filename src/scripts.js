@@ -14,6 +14,7 @@ import { subscriptions } from './subscriptions.js';
 import { genericContainer } from './genericContainer.js';
 import { projectRemove } from './projectRemove.js';
 import { projectClick } from './projectClick.js';
+import { ToDo } from './ToDo.js';
 
 
 document.body.addEventListener('click', (ev) => {
@@ -100,6 +101,36 @@ const initialRender = (function(){
     // Get Local Storage Data
     const localDataArray = JSON.parse(localStorage.getItem("dataArray"))
     const localProjectsArray = JSON.parse(localStorage.getItem('projectsArray'))
+    if(localDataArray && localProjectsArray){
+        const removedObj = dataArray.splice(0, dataArray.length)
+        const removedArray = projectsArray.splice(0, projectsArray.length)
+        localDataArray.forEach(item => {
+            const {
+                _title : title,
+                _description : description,
+                _dueDate : dueDate,
+                _priority : priority,
+                _project : project,
+                _uuid : uuid,
+                _ischecked : ischecked
+            } = item
+
+            const rehydratedElemt = new ToDo (
+                title,
+                description,
+                dueDate,
+                priority,
+                project,
+                uuid,
+                ischecked
+            )
+            dataArray.push(rehydratedElemt)
+        })
+        localProjectsArray.forEach(item => {
+            projectsArray.push(item)
+        })
+    }
+
     const todoContainer = document.querySelector('.todo-container');
     const projectsUL = document.querySelector('aside ul')
     const todoFragment = document.createDocumentFragment()

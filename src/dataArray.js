@@ -34,8 +34,4 @@ export const projectsArray = [
   "CSS",
   "Work",
   "Health"
-];
-
-//Update Local Storage
-localStorage.setItem('dataArray', JSON.stringify(dataArray)) 
-localStorage.setItem('projectsArray', JSON.stringify(projectsArray)) 
+]
