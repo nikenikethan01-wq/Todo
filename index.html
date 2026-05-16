@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script defer src="main.js"></script></head>
+<body>
+    <main>
+        <h2 id="main-title">Home</h2>
+        <button class="add-btn">ADD TODO</button>
+        <div class="todo-container">
+            <!-- todo list goes here -->
+        </div>
+    </main>
+    <aside>
+        <div class="logo-container">
+            <h1>TODO<span>LIST</span></h1>
+            <button class="project-btn">+</button>
+        </div>
+        <div>
+            <h2 class="project-h2">Projects</h2>
+            <ul>
+                <li>Home</li>
+                <!-- project list goes here -->
+            </ul>
+        </div>
+    </aside>
+    <template id="item-template">
+        <div class="item-container">
+            <div class="text-container">
+                <input type="checkbox">
+                <div>
+                    <p>title</p>
+                    <span class="date">date</span>
+                </div>
+            </div>
+            <div class="modification-container">
+                <i class="fa-solid fa-angle-down"></i>
+                <i class="fa-regular fa-pen-to-square"></i>
+                <i class="fa-regular fa-trash-can"></i>
+            </div>
+        </div>
+    </template>
+    <template id="view-template">
+        <div class="view-modal">
+            <div class="view-content">
+                <h2></h2>
+                <p></p>
+                <span class="view-priority"></span>
+                <span class="view-date"></span>
+                <button class="view-close-btn">Close</button>
+            </div>
+        </div>
+    </template>
+    <template id="template-modal">
+            <div id="form-wrapper">
+                <form class="form-content">
+                    <h2>ADD NEW TODO</h2>
+                    <input type="text" placeholder="Title" required>
+                    <textarea placeholder="Description" rows="7" required></textarea>
+                    <div>
+                        <select required>
+                            <option value="Low" selected>Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                        <input type="date" name="due" id="due" required>
+                    </div>
+                    <div>
+                        <button type="button" class="close-btn">Close</button>
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </div>
+                </form>
+            </div>
+    </template>
+    <template id="template-project">
+        <div class="project-modal">
+            <form class="project-content">
+                <h2>Enter Project Name</h2>
+                <input type="text" class="project-name">
+                <div>
+                        <button type="button" class="project-close-btn">Close</button>
+                        <button type="submit" class="project-submit-btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </template>
+</body>
+</html>
