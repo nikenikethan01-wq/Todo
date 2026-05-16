@@ -11,16 +11,18 @@ body{
 }
 
 aside{
+    min-height: 100vh;
     height: 100%;
     grid-area: aside;
     background-color: #121212;
-    padding-left: 1rem;
+    /* padding-left: 1rem; */
     padding-right: 1rem;
     border-right: 1px solid rgba(255, 255, 255, 0.08);
     padding-bottom: 1rem;
 }
 
 main{
+    min-height: 100vh;
     height: 100%;
     grid-area: main;
     background-color: #0A0A0A;
@@ -46,6 +48,10 @@ h1{
     display: inline;
     font-size: 1.5rem;
     color: #F5F5F5;
+    padding-left: 1rem;
+}
+.project-h2{
+    padding-left: 1rem;
 }
 
 h1 span,
@@ -195,6 +201,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     gap: 1rem;
 }
 
+.item-container:hover{
+    transform: scale(1.02);
+}
+
 .item-container{
     display: flex;
     justify-content: space-between;
@@ -203,6 +213,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding: 5px 10px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     background-color: #121212;
+    transition: transform 0.5s ease;
 }
 
 input[type='checkbox']{
@@ -238,6 +249,7 @@ input[type="checkbox"]:checked {
 
 i{
     color: #F5F5F5;
+    cursor: pointer;
 }
 
 /* -----------------priority color border------------------------ */
@@ -289,7 +301,10 @@ ul{
     overflow: auto;
 }
 li{
-    border-left: 5px solid #bb86fc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-wrap: break-word;
     padding-left: 1rem;
     line-height: 2rem;
     font-size: 1.25rem;
@@ -297,8 +312,24 @@ li{
     font-weight: bold;
     margin-bottom: 1rem;
     cursor: pointer;
+    transition: transform 0.4s ease;
+
 }
 
 li:hover{
-    border-right: 5px solid #bb86fc;
+    border-left: 5px solid #bb86fc;
+    color: #E0E0E0;
+    transform: translateY(5px);
+}
+
+button{
+    cursor: pointer;
+}
+
+.fa-solid{
+    color: #767676;
+}
+
+.fa-solid:hover{
+    color: #E0E0E0;
 }

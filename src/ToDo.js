@@ -1,4 +1,4 @@
-export class TodoItem {
+export class ToDo {
 
     constructor(title, description, dueDate, priority, project){
         this.title = title
@@ -25,9 +25,9 @@ export class TodoItem {
         const selectDate = new Date(value)
         const today = new Date()
         today.setHours(0, 0, 0, 0)
-        if(selectDate < today){
-            console.warn("Note: This date is in the past.")
-        }
+        // if(selectDate < today){
+        //     console.warn("Note: This date is in the past.")
+        // }
         this._dueDate = value
     }
     get dueDate(){
